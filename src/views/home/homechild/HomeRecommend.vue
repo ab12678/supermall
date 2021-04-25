@@ -28,6 +28,7 @@ export default {
   display: flex;
   /* 让它自适应 */
   width: 100%;
+  box-shadow: 0 10px 1px rgba(100, 100, 100, 0.2);
 }
 .recommend_item {
   flex: 1;

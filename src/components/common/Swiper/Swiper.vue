@@ -27,18 +27,22 @@ export default {
   name: "Swiper",
   props: {
     interval: {
+      //间隔
       type: Number,
       default: 3000,
     },
     animDuration: {
+      //动画持续时间
       type: Number,
       default: 300,
     },
     moveRatio: {
+      //画面占比移动
       type: Number,
       default: 0.25,
     },
     showIndicator: {
+      //显示小圆圈
       type: Boolean,
       default: true,
     },
@@ -117,6 +121,7 @@ export default {
      * 设置滚动的位置
      */
     setTransform: function (position) {
+      // ${} 模板字符串里用来解析变量的
       this.swiperStyle.transform = `translate3d(${position}px, 0, 0)`;
       this.swiperStyle[
         "-webkit-transform"
@@ -203,7 +208,7 @@ export default {
     },
 
     /**
-     * 控制上一个, 下一个
+     * 控制上一个, 下一个  （左箭头右箭头）
      */
     previous: function () {
       this.changeItem(-1);
@@ -258,7 +263,7 @@ export default {
   margin: 0 5px;
 }
 
-.indi-item.active {
+.active {
   background-color: rgba(212, 62, 46, 1);
 }
 </style>

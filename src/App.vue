@@ -7,7 +7,7 @@
   </div>
 </template>
 
-
+// 组件化开发，appvue 主体页面，路由显示区
  
 
 <script>
