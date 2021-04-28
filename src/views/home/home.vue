@@ -13,9 +13,12 @@
     <!-- feature区域 -->
     <feature-view></feature-view>
     <!-- controlbar区域 -->
-    <control-bar :titles="['热门', '火爆', '推销']"></control-bar>
+    <control-bar
+      :titles="['热门', '火爆', '推销']"
+      @currenttype="currenttype(index)"
+    ></control-bar>
     <!-- goods区域 -->
-    <home-goods-list :goodslist="goods[currentType].list"></home-goods-list>
+    <home-goods-list :goodslist="showgoods()"></home-goods-list>
   </div>
 </template>
 
@@ -59,6 +62,26 @@ export default {
     this.getGoodsData("sell");
   },
   methods: {
+    /**
+     * 与监听相关
+     */
+
+    currenttype(index) {
+      switch (index) {
+        case 0:
+          this.currentType = "pop";
+          break;
+        case 1:
+          this.currentType = "news";
+          break;
+        case 2:
+          this.currentType = "sell";
+          break;
+      }
+    },
+    /**
+     * 与网络相关
+     */
     getHomeMultidata() {
       getHomeMultidata().then((res) => {
         this.banner = res.data.banner.list;
@@ -72,6 +95,12 @@ export default {
         this.goods[type].list.push(...res.data.list);
         this.goods[type].page += 1;
       });
+    },
+  },
+  computed: {
+    showgoods() {
+      // 凡是用到data里属性的都要加this
+      return this.goods[this.currentType].list;
     },
   },
 };

@@ -31,6 +31,7 @@ export default {
   methods: {
     changeindex(index) {
       this.currentindex = index;
+      this.$emit("currenttype", index);
     },
   },
 };
