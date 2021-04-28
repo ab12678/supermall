@@ -32,7 +32,8 @@ import HomeGoodsList from "./homechild/HomeGoodsList";
 
 import ControlBar from "@/components/content/controlBar";
 
-import { getHomeMultidata, getGoodsData } from "@/network/home";
+import { getHomeMultidata, getGoodSData } from "@/network/home";
+import { getHomeMultidata, getGoodSData } from "@/network/home";
 export default {
   name: "home",
   components: {

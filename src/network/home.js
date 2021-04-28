@@ -7,7 +7,7 @@ export function getHomeMultidata() {
     })
 }
 
-export function getDoodsData(type, page) {
+export function getGoodsData(type, page) {
     return request({
         url: 'home/data',
         params: {
